@@ -27,7 +27,7 @@ export default function Page() {
       // console.log(res.data);
       await setCookie("token", res.data.token);
       setUserAuth(true);
-      router.push("/");
+      router.push("/secure/dashboard");
       // location.reload();
 
 
@@ -117,21 +117,21 @@ export default function Page() {
                   />
                 </div>
                 <div className="pt-5">
-                  <h1 className="text-gray-400 text-center">
+                  <div className="text-gray-400 text-center">
                     Not a User ?{" "}
                     <span className="font-semibold text-black">
                       <Link href={"/signup"}>SignUp</Link>
                     </span>
-                  </h1>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
           <div className="flex lg:justify-start justify-end p-2 ">
           <div className="flex items-center gap-3 rounded-xl  px-2 py-3 ">
-              <h1 className="text-2xl font-semibold text-center">
+              <div className="text-2xl font-semibold text-center">
                 UMS-<span className="text-zinc-500 ">RBAC</span>
-              </h1>
+              </div>
             </div>
           </div>
         </div>

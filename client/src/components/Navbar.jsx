@@ -60,11 +60,11 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axiosInstance.post("/auth/admin/logout");
+      const res = await axiosInstance.post("/auth/logout");
       console.log(res.data);
       removeCookie("adminToken");
       toast.success("Logout successfully");
-      router.push("/admin");
+      router.push("/login");
     } catch (error) {
       console.error(error);
       toast.error("Unable to Logout");
