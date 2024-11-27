@@ -2,9 +2,9 @@ import { cookies } from "next/headers";
 import React from "react";
 import SetUserAuth from "./SetUserAuth";
 
-const UserAuth = () => {
+const UserAuth = async() => {
   const cookieStore = cookies(); 
-  const userToken =  cookieStore.get("token"); 
+  const userToken =  await cookieStore.get("token"); 
   let auth = false;
   if(!userToken){
     console.log("No token available");

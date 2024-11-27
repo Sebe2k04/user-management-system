@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import { FaOpencart, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import {  FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import { toast } from "react-toastify";
 

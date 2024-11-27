@@ -2,19 +2,19 @@
 import { useGlobalContext } from "@/context/GlobalProvider";
 import { axiosInstance } from "@/utils/axiosConfig";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 
 const SetUserAuth = ({ token, auth }) => {
   // const router = useRouter();
   console.log("setuserauth",auth)
   const path = usePathname();
-  const { userAuth, setUserAuth, userData, setUserData } = useGlobalContext();
-  useEffect(() => {
+  const { setUserAuth, userData, setUserData } = useGlobalContext();
+  useLayoutEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await axiosInstance.get("/user/me");
+        const res = await axiosInstance.get("/users/me");
         console.log(res.data);
-        setUserData(res.data);
+        setUserData(res.data[0]);
       } catch (error) {
         console.log(error);
       }

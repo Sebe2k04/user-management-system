@@ -10,6 +10,23 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+exports.getUser = async(req,res) => {
+  const id = req.userId;
+  try{
+    const user = await User.find({_id:id}).select('-password')
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(user);
+  }
+  catch(err){
+    res.status(400).json({
+      message: err.message
+    }
+    )
+  }
+}
+
 exports.addUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;

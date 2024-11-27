@@ -6,6 +6,7 @@ const permissionRoutes = require('./routes/permissionRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const teamRoutes = require('./routes/teamRoutes');
 const authRoutes = require('./routes/authRoutes');
+const cookieParser = require("cookie-parser");
 
 const cors = require('cors')
 dotenv.config();
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
-
+app.use(cookieParser());
 app.use(express.json());
 
 
