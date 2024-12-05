@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers';
 
 export async function removeCookie(name) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   // Clear the cookie by setting it to an empty value and a past expiration date
   cookieStore.set({

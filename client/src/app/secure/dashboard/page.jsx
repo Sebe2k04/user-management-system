@@ -108,12 +108,12 @@ export default function Page() {
         window.myLine = new Chart(ctx, config);
       }, []);
     return (
-        <div>
+        <div className="">
             <h1 className="font-semibold text-2xl">Dashboard</h1>
             <div className="p-4 flex-auto">
           {/* Chart */}
           <div className="">
-          <div className="relative h-[450px] border rounded-xl">
+          <div className="relative h-[450px] w-full  border rounded-xl">
             <canvas id="line-chart"></canvas>
           </div>
           </div>

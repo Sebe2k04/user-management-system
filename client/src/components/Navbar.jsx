@@ -152,9 +152,9 @@ const Navbar = () => {
           </section>
         </Drawer>
       </section>
-      <section className="lg:flex hidden w-fit p-2 h-screen sticky top-0 left-0">
+      <section className="lg:flex hidden max-w-[400px] w-fit h-screen sticky top-0 left-0">
         <div className="">
-          <div className="w-fit shadow-md h-full rounded-xl">
+          <div className="w-fit shadow-md h-full">
             <div className="py-10 pl-5 pr-8 text-gray-400 flex flex-col h-full justify-between">
               <div className="grid gap-2">
                 {routes.map((route, index) => {

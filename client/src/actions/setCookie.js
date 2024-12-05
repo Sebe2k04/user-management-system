@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers';
 
 export async function setCookie(name,value) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   // Set the cookie with httpOnly, secure, and other attributes
   cookieStore.set({

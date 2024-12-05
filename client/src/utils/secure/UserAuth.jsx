@@ -3,8 +3,8 @@ import React from "react";
 import SetUserAuth from "./SetUserAuth";
 
 const UserAuth = async() => {
-  const cookieStore = cookies(); 
-  const userToken =  await cookieStore.get("token"); 
+  const cookieStore = await cookies(); 
+  const userToken = cookieStore.get("token"); 
   let auth = false;
   if(!userToken){
     console.log("No token available");
